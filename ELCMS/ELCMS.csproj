@@ -222,6 +222,7 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="UserAllEquipment.aspx" />
+    <Content Include="UserDashboard.aspx" />
     <Content Include="Userdetails.aspx" />
     <Content Include="UserProfileDetails.aspx" />
     <Content Include="UserProfileUpdate.aspx" />
@@ -439,6 +440,13 @@
     </Compile>
     <Compile Include="UserAllEquipment.aspx.designer.cs">
       <DependentUpon>UserAllEquipment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserDashboard.aspx.cs">
+      <DependentUpon>UserDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserDashboard.aspx.designer.cs">
+      <DependentUpon>UserDashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Userdetails.aspx.cs">
       <DependentUpon>Userdetails.aspx</DependentUpon>

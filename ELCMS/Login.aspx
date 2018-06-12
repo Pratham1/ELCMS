@@ -40,8 +40,8 @@
           <asp:Button CssClass="btn btn-primary btn-block" id="btn_submit" Text="Login" runat="server" OnClick="Login_Submit" />
         </form>
         <div class="text-center">
-          <a class="d-block small mt-3" href="register.html">Register an Account</a>
-          <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
+          <a class="d-block small mt-3" href="Account/Register.aspx">Register an Account</a>
+          <a class="d-block small" href="Account/Forgot.aspx">Forgot Password?</a>
         </div>
       </div>
     </div>

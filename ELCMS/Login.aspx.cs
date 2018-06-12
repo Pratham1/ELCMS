@@ -19,14 +19,14 @@ namespace ELCMS.Account
 
         protected void Login_Submit(object sender, EventArgs e)
         {
-            SqlConnection con=null;
+            SqlConnection con= new SqlConnection(@"Data Source=PRATHAM-PC;Initial Catalog=ELCMS;Integrated Security=SSPI");
+
             try
             {
-                con = new SqlConnection(ConfigurationManager.ConnectionStrings["dbconnection"].ConnectionString);
                 con.Open();
-            }catch(Exception exc)
+            }catch(Exception ex)
             {
-                ClientScript.RegisterStartupScript(Page.GetType(), "validation", "<script language='javascript'>alert('System Error. Please Login after sometime')</script>");
+                ClientScript.RegisterStartupScript(Page.GetType(), "validation", "<script language='javascript'>alert('Server Error Please try after sometime')</script>");
             }
             SqlCommand cmd = new SqlCommand("select * from Login where UserName =@username and Password=@password", con);
             cmd.Parameters.AddWithValue("@username", txt_Username.Text);
