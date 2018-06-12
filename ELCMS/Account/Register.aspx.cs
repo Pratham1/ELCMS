@@ -6,6 +6,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
 using ELCMS.Models;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace ELCMS.Account
 {
@@ -13,24 +16,22 @@ namespace ELCMS.Account
     {
         protected void Register_Submit(object sender, EventArgs e)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-            var user = new ApplicationUser() { UserName = reg_Username.Text };
-            IdentityResult result = manager.Create(user, reg_Password.Text);
-            if (result.Succeeded)
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ELCMSDBconnect"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("insert into Login values (@UserName, @Password,@userRole)", con);
+            cmd.Parameters.AddWithValue("UserName", reg_Username.Text);
+            cmd.Parameters.AddWithValue("Password", reg_Password.Text);
+            cmd.Parameters.AddWithValue("userRole", "User");
+            int status = cmd.ExecuteNonQuery();
+            if (status == 0)
             {
-                // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                //string code = manager.GenerateEmailConfirmationToken(user.Id);
-                //string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);
-                //manager.SendEmail(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>.");
-
-                signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
-                IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                ClientScript.RegisterStartupScript(Page.GetType(), "validation", "<script language='javascript'>alert('Registration Failed')</script>");
             }
             else
             {
-               // ErrorMessage.Text = result.Errors.FirstOrDefault();
+                Response.Redirect("~/AdminDashboard.aspx");
             }
+            
         }
     }
 }

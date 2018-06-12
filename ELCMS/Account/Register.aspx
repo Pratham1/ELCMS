@@ -25,15 +25,16 @@
         <form runat="server" id="registration">
           <div class="form-group">
             <label for="exampleInputEmail1">Username</label>
-            <asp:TextBox runat="server" CssClass="form-control" id="reg_Username"  value=""> </asp:TextBox>
+            <asp:TextBox runat="server" CssClass="form-control" id="reg_Username"  required="required"> </asp:TextBox>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <asp:TextBox runat="server" CssClass="form-control" id="reg_Password" type="password" placeholder="Password" value=""></asp:TextBox>
+            <asp:TextBox runat="server" CssClass="form-control" id="reg_Password" type="password" placeholder="Password" required="required"></asp:TextBox>
           </div>
             <div class="form-group">
             <label for="exampleInputPassword1">Confirm Password</label>
-            <asp:TextBox runat="server" CssClass="form-control" id="reg_confirm_pwd" type="password" placeholder="Confirm Password" value=""></asp:TextBox>
+            <asp:TextBox runat="server" CssClass="form-control" id="reg_confirm_pwd" type="password" placeholder="Confirm Password" required="required"></asp:TextBox>
+            <span id='message'></span>
           </div>
           <asp:Button CssClass="btn btn-primary btn-block" id="btn_register" Text="Register" runat="server" OnClick="Register_Submit" />
         </form>
@@ -45,6 +46,7 @@
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- Core plugin JavaScript-->
   <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../vendor/jquery/confirm.js"></script>
 </body>
 
 </html>

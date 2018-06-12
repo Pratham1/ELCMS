@@ -25,11 +25,11 @@
         <form runat="server">
           <div class="form-group">
             <label for="exampleInputEmail1">Username</label>
-            <asp:TextBox runat="server" CssClass="form-control" id="txt_Username" placeholder="Enter Username"> </asp:TextBox>
+            <asp:TextBox runat="server" CssClass="form-control" id="txt_Username" placeholder="Enter Username" required="required"> </asp:TextBox>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <asp:TextBox runat="server" CssClass="form-control" id="txt_Password" type="password" placeholder="Password"></asp:TextBox>
+            <asp:TextBox runat="server" CssClass="form-control" id="txt_Password" type="password" placeholder="Password" required="required"></asp:TextBox>
           </div>
           <div class="form-group">
             <div class="form-check">
