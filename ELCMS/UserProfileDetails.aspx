@@ -2,30 +2,22 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-  <meta charset="utf-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-  <meta name="description" content=""/>
-  <meta name="author" content=""/>
-  <title>User My Profile</title>
-<!--For profile details-->
-
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title> User Profile Details</title>
   <!-- Bootstrap core CSS-->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
-  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Page level plugin CSS-->
-  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet"/>
+  <link href="../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet"/>
-   
-
-
+  <link href="../css/sb-admin.css" rel="stylesheet">
 </head>
 
 
@@ -102,34 +94,36 @@
           <div class="panel panel-info">
             <div class="panel-heading">
               <h3 class="panel-title">User Name</h3>
+            
+              <h3><asp:Label ID="userNameLabel" runat="server"></asp:Label></h3>
+
             </div>
             <div class="panel-body">
               <div class="row">
-              <!--  <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div> -->
-                
+              
+                <form runat="server">
                 <div class=" col-md-9 col-lg-9 "> 
                       <table class="table">
                     <tbody>
                       <tr>
                         <td>Department:</td>
-                        <td>Executive</td>
+                        <td><asp:TextBox runat="server" EnableViewState="true" MaxLength="19" CssClass="form-control" id="txt_department" /></td>
                       </tr>
                       <tr>
                         <td>Personal Number</td>
-                        <td>06123-K</td>
+                        <td><asp:TextBox runat="server" EnableViewState="true" MaxLength="6" CssClass="form-control" id="txt_pno" /></td>
                       </tr>
                       <tr>
                         <td>Unit</td>
-                        <td>INS Kochi</td>
+                        <td><asp:TextBox runat="server" MaxLength="30" CssClass="form-control" id="txt_unit"  /></td>
                       </tr>
-                                           
+                       <tr>
+                        <td>Group</td>
+                        <td><asp:TextBox runat="server" MaxLength="8" CssClass="form-control" id="txt_group"  /></td>
+                      </tr>                    
                       <tr>
                         <td>Email</td>
-                        <td><a href="mailto:info@support.com">info@Navy.gov.in</a></td>
-                      </tr>
-                      <tr>
-                        <td>Phone Number</td>
-                       <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
+                        <td><asp:TextBox runat="server" MaxLength="30" CssClass="form-control" id="txt_email" /></td>
                       </tr>
                         
                     </tbody>
@@ -137,8 +131,11 @@
                   
                 
                 </div>
+                    <a href="#" class="btn btn-default btn-primary">Edit Profile</a>
+                    <asp:Button CssClass="btn btn-primary " id="btn_delete" Text="Delete Profile" runat="server" OnClick="Delete_Profile" />
+                </form>
                 <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
-                <A href="UserProfileUpdate.aspx" >Edit Profile</A>
+                    
                 </div>
               </div>
             </div>
@@ -179,7 +176,7 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="loginPage.aspx">Logout</a>
+            <a class="btn btn-primary" href="login.aspx">Logout</a>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Userdetails.aspx.cs" Inherits="ELCMS.Userdetails" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateUserProfile.aspx.cs" Inherits="ELCMS.CreateUserProfile" %>
 
 <!DOCTYPE html>
 
@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>View User Details</title>
+  <title>Create User Profile</title>
   <!-- Bootstrap core CSS-->
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -97,34 +97,29 @@
                 <asp:TextBox runat="server" CssClass="form-control" id="txt_Name" type="text" aria-describedby="nameHelp"  />
               </div>
               <div class="col-md-6 form-group">
-                <label for="lbl_GroupName">Group name</label>
-                <asp:TextBox runat="server" class="form-control" id="txt_GroupName" type="text" aria-describedby="nameHelp" placeholder="Group name" />
+                <label for="lbl_Name">Personal Number</label>
+                <asp:TextBox runat="server" CssClass="form-control" id="txt_pno" type="text" aria-describedby="nameHelp"  />
+             </div>
+              <div class="col-md-6 form-group">
+                <label for="lbl_GroupName">Department</label>
+                <asp:TextBox runat="server" class="form-control" id="txt_department" type="text" aria-describedby="nameHelp"  />
               </div>
-                <div >
-                    <button type="button" class="btn btn-primary float-right" id="delete_row"  style="margin-left: 10px">Remove Equipment</button>
-                    <button type="button" class="btn btn-primary" id="add_row" style="margin-left: 295px">Add Equipment</button>
-                   
-                </div>
+              <div class="col-md-6 form-group">
+                <label for="lbl_GroupName">Group</label>
+                <asp:TextBox runat="server" class="form-control" id="txt_Group" type="text" aria-describedby="nameHelp"  />
+              </div> 
+              <div class="col-md-6 form-group">
+                <label for="lbl_Name">Unit</label>
+                <asp:TextBox runat="server" CssClass="form-control" id="txt_unit" type="txt_unit" aria-describedby="nameHelp"  />
+             </div> 
+              <div class="col-md-6 form-group">
+                <label for="lbl_Name">Email</label>
+                <asp:TextBox runat="server" CssClass="form-control" id="txt_email" type="txt_unit" aria-describedby="nameHelp"  />
+             </div> 
             </div>
           </div>
-           
-
-		  <table  class="table table-striped table-bordered table-hover" id="equipment_table">
-            <thead>
-                <tr>
-                    <th>Select</th>
-                    <th>Equipment Name</th>
-                    <th>Action</th>    
-                </tr>
-            </thead>
-            <tbody>
-
-                
-			</tbody>
-		  </table>
-            <asp:Button CssClass="btn btn-primary float-right" id="btn_clear_user_det" Text="Clear" runat="server" style="margin-left: 10px" OnClick="UserDetails_Clear" /> 
-            <asp:Button CssClass="btn btn-primary " id="btn_save_user_det" Text="Save" runat="server" style="margin-left: 465px" OnClick="UserDetails_Submit" />
-            
+          <asp:Button runat="server" type="reset" class="btn pull-right btn-primary btn-space" Text="Reset" OnClientClick="this.form.reset();return false;"></asp:Button>
+		  <asp:Button runat="server" type="submit" class="btn pull-right btn-primary btn-space" Text="Save" OnClick="CreateUser_Submit"></asp:Button>
         </form>
       </div>
     </div>
@@ -208,3 +203,4 @@
 </body>
 
 </html>
+

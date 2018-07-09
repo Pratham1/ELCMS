@@ -19,6 +19,7 @@ namespace ELCMS.Account
 
         protected void Login_Submit(object sender, EventArgs e)
         {
+
             
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ELCMSDBconnect"].ConnectionString);
 
@@ -33,27 +34,13 @@ namespace ELCMS.Account
             {
                         Response.Redirect("~/AdminDashboard.aspx");
             }
-            else { 
-                        Response.Redirect("~/UserDashboard.aspx");
-                 }
+            else {
+                Session["Username"] = txt_Username.Text;
+                ClientScript.RegisterStartupScript(Page.GetType(), "validation", "<script language='javascript'>alert('+Session[\"Username\"]+')</script>");
+                Response.Redirect("~/UserDashboard.aspx");
+                
+            }
            con.Close();
-            
-            //SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-            //if(reader.Read()== true)
-            //{
-            // Response.Redirect("~/AdminDashboard.aspx");
-            //}
-            //SqlDataAdapter da = new SqlDataAdapter(cmd);
-            // DataTable dt = new DataTable();
-            // da.Fill(dt);
-            // if (dt.Rows.Count > 0)
-            //{
-            //Response.Redirect("~/AdminDashboard.aspx");
-            //}
-            //else
-            // {
-            //    ClientScript.RegisterStartupScript(Page.GetType(), "validation", "<script language='javascript'>alert('Invalid Username and Password')</script>");
-            //}
         }
    }
 }

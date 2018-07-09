@@ -162,6 +162,8 @@
     <Content Include="AdminDashboard.aspx" />
     <Content Include="AdminProfileDetails.aspx" />
     <Content Include="AdminViewAllRoutine.aspx" />
+    <Content Include="CreateUserProfile.aspx" />
+    <Content Include="DeleteUser.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Account\Manage.aspx" />
     <Content Include="Account\ManageLogins.aspx" />
@@ -218,7 +220,9 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="SearchRoutines.aspx" />
     <Content Include="Site.Master" />
+    <Content Include="UpdateRoutines.aspx" />
     <Content Include="UserAllEquipment.aspx" />
     <Content Include="UserDashboard.aspx" />
     <Content Include="Userdetails.aspx" />
@@ -288,6 +292,20 @@
     </Compile>
     <Compile Include="AdminViewAllRoutine.aspx.designer.cs">
       <DependentUpon>AdminViewAllRoutine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateUserProfile.aspx.cs">
+      <DependentUpon>CreateUserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateUserProfile.aspx.designer.cs">
+      <DependentUpon>CreateUserProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteUser.aspx.cs">
+      <DependentUpon>DeleteUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteUser.aspx.designer.cs">
+      <DependentUpon>DeleteUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -403,6 +421,13 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchRoutines.aspx.cs">
+      <DependentUpon>SearchRoutines.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchRoutines.aspx.designer.cs">
+      <DependentUpon>SearchRoutines.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -418,6 +443,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="UpdateRoutines.aspx.cs">
+      <DependentUpon>UpdateRoutines.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateRoutines.aspx.designer.cs">
+      <DependentUpon>UpdateRoutines.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserAllEquipment.aspx.cs">
       <DependentUpon>UserAllEquipment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

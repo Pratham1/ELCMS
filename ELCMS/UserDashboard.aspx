@@ -11,13 +11,13 @@
   <meta name="author" content=""/>
   <title>User Dashboard</title>
   <!-- Bootstrap core CSS-->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
   <!-- Custom fonts for this template-->
-  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
   <!-- Page level plugin CSS-->
-  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet"/>
+  <link href="../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet"/>
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet"/>
+  <link href="../css/sb-admin.css" rel="stylesheet"/>
 </head>
 
 
@@ -44,7 +44,7 @@
         </li>
         
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My Equipments">
-          <a class="nav-link" href="UserAllEquipments.aspx">
+          <a class="nav-link" href="Maintops.aspx">
             <i class="fa fa-cogs"></i>
             <span class="nav-link-text">My Equipments</span>
           </a>
@@ -82,7 +82,7 @@
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">My Dashboard</li>
+        <li class="breadcrumb-item active">All Details</li>
       </ol>
       <!-- Icon Cards-->
       <div class="row">
@@ -128,47 +128,16 @@
           <i class="fa fa-table"></i> Routines carried out today</div>
         <div class="card-body">
           <div class="table-responsive">
-            <table class="table table-bordered" id="routinesdonetable" width="100%" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>User</th>
-                  <th>Branch</th>
-                  <th>Equipment</th>
-                  <th>Routine Name</th>
-                  <th>Start Time</th>
-                  <th>Finish time</th>
-                </tr>
-              </thead>
-              <tfoot>
-                <tr>
-                  <th>User</th>
-                  <th>Branch</th>
-                  <th>Equipment</th>
-                  <th>Routine Name</th>
-                  <th>Start Time</th>
-                  <th>Finish time</th>
-                </tr>
-              </tfoot>
-              <tbody>
-                <tr>
-                  <td>User 1</td>
-                  <td>Electrical</td>
-                  <td>Equipment 2</td>
-                  <td>W6</td>
-                  <td>1503</td>
-                  <td>1709</td>
-                </tr>
-                <tr>
-                  <td>User 5</td>
-                  <td>ASW</td>
-                  <td>Equipment 4</td>
-                  <td>D6</td>
-                  <td>1103</td>
-                  <td>1319</td>
-                </tr>
-                
-              </tbody>
-            </table>
+              <asp:DataGrid ID="Grid" runat="server" PageSize="5" AllowPaging="True" DataKeyField="EmpId" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" > 
+                  <Columns> 
+                      <asp:BoundColumn HeaderText="Equipment"> </asp:BoundColumn>
+                      <asp:BoundColumn HeaderText="Routine Name"> </asp:BoundColumn>
+                      <asp:BoundColumn HeaderText="Users attached"> </asp:BoundColumn>
+                      <asp:BoundColumn HeaderText="Status"> </asp:BoundColumn>
+                      <asp:BoundColumn HeaderText="Start Time"> </asp:BoundColumn>
+                      <asp:BoundColumn HeaderText="Finish time"> </asp:BoundColumn>
+                  </Columns>
+              </asp:DataGrid>
           </div>
         </div>
         <%-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> --%>
@@ -250,7 +219,7 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="loginPage.aspx">Logout</a>
+            <a class="btn btn-primary" href="login.aspx">Logout</a>
           </div>
         </div>
       </div>

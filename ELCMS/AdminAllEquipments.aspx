@@ -34,7 +34,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="AdminDashboard.aspx">Ships Equipment Lifecycle Management system</a>
+    <a class="navbar-brand" href="AdminDashboard.aspx">Equipment Lifecycle Management system</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -112,66 +112,24 @@
         </li>
         <li class="breadcrumb-item active">My Equipments</li>
       </ol>
-   <div class="card mb-3">
-      
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-bordered" id="routinesdonetable" style="width:auto">
-              <thead>
-                <tr>
-                  <th>Equipment Name</th>
-                  <th>Department</th>
-                  <th>Users attached</th>
-                  <th>Daily Routines</th>
-                  <th>Weekly Routines</th>
-                  <th>Monthily Routines</th>
-                  <th>Quarterly Routines</th>
-                  <th>Yearly Routines</th>
 
-                </tr>
-              </thead>
-              <tfoot>
-                <tr>
-                   <th>Equipment Name</th>
-                  <th>Department</th>
-                  <th>Users attached</th>
-                  <th>Daily Routines</th>
-                  <th>Weekly Routines</th>
-                  <th>Monthily Routines</th>
-                  <th>Quarterly Routines</th>
-                  <th>Yearly Routines</th>
-                </tr>
-              </tfoot>
-              <tbody>
-                <tr>
-                  <td>Equipment 2</td>
-                  <td>Electrical</td>
-                  <td>6</td>
-                  <td>30</td>
-                  <td>13</td>
-                  <td>4</td>
-                  <td>22</td>
-                  <td>3</td>
-                  
-                </tr>
-                <tr>
-                 <td>Equipment 1</td>
-                  <td>Mechanical</td>
-                  <td>6</td>
-                  <td>30</td>
-                  <td>13</td>
-                  <td>4</td>
-                  <td>22</td>
-                  <td>3</td>
-                </tr>
-                
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <%-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> --%>
+      <div class="container">
+         <div class="card  " style="width: 65rem;">
+            <div class="card-header"></div>
+            <div class="card-body">
+            <form runat="server">
+                <asp:GridView CssClass="table table-striped table-bordered table-hover columnscss" ID="GridView1" runat="server" ScrollBars="Both" AllowPaging="False" AutoGenerateColumns="False">
+                                          <columns>
+                                                <asp:BoundField HeaderText="Equipment_Code" DataField="Equipment_Code" />
+                                                <asp:BoundField HeaderText="Equipment_Name" DataField="Equipment_Name" />
+                                                <asp:BoundField HeaderText="Equipment_Description" DataField="Equipment_Description" />
+
+                                          </columns>  
+                </asp:GridView>
+            </form>
+            </div>
+         </div>
       </div>
-
         
 
 

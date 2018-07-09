@@ -18,7 +18,7 @@
 </head>
 
 <body class="bg-dark">
-  <div class="container">
+  <div class="container loginmodal">
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Login</div>
       <div class="card-body">
@@ -46,6 +46,9 @@
       </div>
     </div>
   </div>
+
+  
+
   <!-- Bootstrap core JavaScript-->
   <script src="../vendor/jquery/jquery.min.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

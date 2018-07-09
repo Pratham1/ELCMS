@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Maintops.aspx.cs" Inherits="ELCMS.Maintops" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DeleteUser.aspx.cs" Inherits="ELCMS.DeleteUser" %>
 
 <!DOCTYPE html>
 
@@ -23,8 +23,8 @@
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="UserDashboard.aspx">Equipment Lifecycle Management system</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="UserDashboard.aspx">Ships Equipment Lifecycle Management system</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -75,77 +75,49 @@
       </ul>
     </div>
   </nav>
-    <div class="content-wrapper">
+  <div class="content-wrapper">
     <div class="container-fluid">
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Equipments</li>
+        <li class="breadcrumb-item active">User Details</li>
       </ol>
-    <div class="container" >
-    <form runat="server">
-        <div class="form-group">
-        <div class="form-row">
-            <div class="form-group col-md-2">
-                <label for="lbl_orig">ORIG</label>
-                <asp:TextBox runat="server" type="number" CssClass="form-control" id="txt_Orig" placeholder="ORIG" required="required"/>
+      <!-- Example DataTables Card-->
+  <div class="container" >
+    <div class="card card-register mx-auto mt-5">
+      <div class="card-header">User:</div>
+      <div class="card-body">
+        <form runat="server">
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6 form-group">
+                <label for="lbl_Name">Name</label>
+                <asp:TextBox runat="server" CssClass="form-control" id="txt_Name" type="text" aria-describedby="nameHelp"  />
+              </div>
             </div>
-            <div class="form-group col-md-2">
-                <label for="lbl_AMND">AMND</label>
-                <asp:TextBox runat="server" type="number" CssClass="form-control" id="txt_AMND" placeholder="AMND" required="required"/>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="lbl_equipment_name">Equipment Name</label>
-                <asp:TextBox runat="server" type="text" CssClass="form-control" id="txt_Equip_name" placeholder="Equipment Name" required="required"/>
-            </div>
-            <div class="form-group col-md-2">
-                <label for="lbl_maintops_no">Maintops No</label>
-                <asp:TextBox runat="server" type="number" CssClass="form-control" id="txt_maintops_no" placeholder="Maintops No" required="required"/>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-2">
-                <label for="lbl_equip_code">Equipment Code</label>
-                <asp:TextBox runat="server" type="number" CssClass="form-control" id="txt_equip_code" placeholder="Equipment Code" required="required"/>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="lbl_equip_desc">Equipment Description</label>
-                <asp:TextBox runat="server" type="text" CssClass="form-control" id="txt_equip_desc" placeholder="Equipment Desc" required="required"/>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="lbl_equip_desc">Ships/Submarines Applicable</label>
-                <asp:TextBox runat="server" type="text" CssClass="form-control" id="txt_ship_name" placeholder="Ship Name" required="required"/>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-12">
-                <label for="lbl_authority">Authority</label>
-                <asp:TextBox runat="server" type="text" CssClass="form-control" id="txt_authority" placeholder="Authority" required="required"/>
-            </div>
-            
-       </div>
-        <div class="form-row">
-            <div class="form-group col-md-8">
-                <label for="lbl_document">Documents</label>
-                <asp:TextBox runat="server" type="text" CssClass="form-control" id="txt_docs" placeholder="Documents" required="required"/>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="lbl_remarks">Remarks</label>
-                <asp:TextBox runat="server" type="text" CssClass="form-control" id="txt_remarks" placeholder="Remarks" />
-            </div>
-       </div>
-            </div>
-        <div>
-            <asp:Button CssClass="btn btn-primary " id="btn_save_maintops" Text="Save" runat="server" OnClick="Maintops_Submit"/>
-            <asp:Button CssClass="btn btn-primary " id="btn_clear_maintops" Text="Clear" runat="server" OnClientClick="this.form.reset();return false;"/>
-            <button class="btn btn-primary " id="btn_add_routine" Text="Clear" runat="server" OnClick="Add_Routine"  style="margin-left: 795px" disabled>Add Routine</button>
-         </div>      
+          </div>
         </form>
+      </div>
+    </div>
+  </div>
+    
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © Your Website 2018</small>
         </div>
-        </div>
-        <!-- Logout Modal-->
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -163,7 +135,20 @@
         </div>
       </div>
     </div>
-        </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="../vendor/datatables/jquery.dataTables.js"></script>
+    <script src="../vendor/datatables/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="js/sb-admin-datatables.min.js"></script>
+  </div>
 </body>
 
 </html>
+

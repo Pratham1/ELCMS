@@ -10,7 +10,7 @@
 namespace ELCMS {
     
     
-    public partial class Userdetails {
+    public partial class CreateUserProfile {
         
         /// <summary>
         /// txt_Name control.
@@ -22,30 +22,48 @@ namespace ELCMS {
         protected global::System.Web.UI.WebControls.TextBox txt_Name;
         
         /// <summary>
-        /// txt_GroupName control.
+        /// txt_pno control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_GroupName;
+        protected global::System.Web.UI.WebControls.TextBox txt_pno;
         
         /// <summary>
-        /// btn_clear_user_det control.
+        /// txt_department control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_clear_user_det;
+        protected global::System.Web.UI.WebControls.TextBox txt_department;
         
         /// <summary>
-        /// btn_save_user_det control.
+        /// txt_Group control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_save_user_det;
+        protected global::System.Web.UI.WebControls.TextBox txt_Group;
+        
+        /// <summary>
+        /// txt_unit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_unit;
+        
+        /// <summary>
+        /// txt_email control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_email;
     }
 }

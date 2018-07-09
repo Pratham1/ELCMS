@@ -11,6 +11,20 @@ namespace ELCMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Username"] != null)
+            {
+                txt_Name.Text = Session["Username"].ToString();
+            }
+            
+        }
+
+        protected void UserDetails_Submit(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void UserDetails_Clear(object sender, EventArgs e)
+        {
 
         }
     }

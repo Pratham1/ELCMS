@@ -29,7 +29,8 @@ namespace ELCMS.Account
             }
             else
             {
-                Response.Redirect("~/AdminDashboard.aspx");
+                Session["Username"] = reg_Username.Text;
+                Response.Redirect("~/UserDashboard.aspx");
             }
             
         }

@@ -13,6 +13,33 @@ namespace ELCMS {
     public partial class AddRoutines {
         
         /// <summary>
+        /// routine_maintops_no control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox routine_maintops_no;
+        
+        /// <summary>
+        /// routine_equipment_code control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox routine_equipment_code;
+        
+        /// <summary>
+        /// routine_equipment_name control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox routine_equipment_name;
+        
+        /// <summary>
         /// txt_routine_no control.
         /// </summary>
         /// <remarks>
